@@ -7,13 +7,14 @@ plugins {
     id("com.github.johnrengelman.shadow") version "6.1.0"
 }
 
+
 toothpick {
     forkName = "Papyrus"
     groupId = "de.erethon"
     val versionTag = System.getenv("BUILD_NUMBER")
         ?: "\"${gitCmd("rev-parse", "--short", "HEAD").output}\""
     forkVersion = "git-$forkName-$versionTag"
-    forkUrl = "https://github.com/MyName/MyAirplaneFork"
+    forkUrl = "https://github.com/Malfrador/Papyrus"
 
     minecraftVersion = "1.16.5"
     nmsPackage = "1_16_R3"
