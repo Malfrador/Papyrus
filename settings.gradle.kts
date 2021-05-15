@@ -5,10 +5,11 @@ pluginManagement {
         mavenCentral()
         jcenter()
         maven("https://repo.jpenilla.xyz/snapshots")
+        maven("https://plugins.gradle.org/m2/")
     }
 }
 
-val forkName = "MyAirplaneFork"
+val forkName = "Papyrus"
 val forkNameLowercase = forkName.toLowerCase(Locale.ENGLISH)
 
 rootProject.name = forkNameLowercase

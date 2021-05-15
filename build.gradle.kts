@@ -4,11 +4,12 @@ import xyz.jpenilla.toothpick.toothpick
 plugins {
     `java-library`
     id("xyz.jpenilla.toothpick") version "1.0.0-SNAPSHOT"
+    id("com.github.johnrengelman.shadow") version "6.1.0"
 }
 
 toothpick {
-    forkName = "MyAirplaneFork"
-    groupId = "com.mygroupid"
+    forkName = "Papyrus"
+    groupId = "de.erethon"
     val versionTag = System.getenv("BUILD_NUMBER")
         ?: "\"${gitCmd("rev-parse", "--short", "HEAD").output}\""
     forkVersion = "git-$forkName-$versionTag"
@@ -21,7 +22,7 @@ toothpick {
     upstream = "Airplane"
     upstreamBranch = "origin/master"
 
-    paperclipName = "launcher-myairplanefork"
+    paperclipName = "launcher-papyrus"
 
     server {
         project = project(":$forkNameLowercase-server")
@@ -40,6 +41,7 @@ subprojects {
         maven("https://nexus.velocitypowered.com/repository/velocity-artifacts-snapshots/")
         maven("https://libraries.minecraft.net")
         maven("https://jitpack.io")
+        maven("https://plugins.gradle.org/m2/")
         mavenLocal()
     }
 
